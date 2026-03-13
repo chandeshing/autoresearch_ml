@@ -64,3 +64,8 @@ print(f"val_rmse:         {val_rmse:.2f}")
 print(f"training_seconds: {t_end - t_start:.1f}")
 print(f"num_samples:      {len(df)}")
 print(f"num_features:     {X_train.shape[1]}")
+
+# ---------------------------------------------------------------------------
+# Chart (do not modify)
+# ---------------------------------------------------------------------------
+from plot import plot; plot()
