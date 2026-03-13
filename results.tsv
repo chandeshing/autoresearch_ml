@@ -38,3 +38,16 @@ bb1f0db	192.82	discard	subsample=0.7
 7504639	179.37	discard	n_estimators=2500 lr=0.008
 7504639	200.10	discard	engine_size squared feature
 7504639	206.26	discard	mileage bins 10
+373d6a9	175.87	keep	n_estimators=3000 lr=0.007 min_child_weight=2
+373d6a9	180.09	discard	n_estimators=4000 lr=0.005
+373d6a9	176.24	discard	n_estimators=3500 lr=0.006
+373d6a9	182.66	discard	max_depth=7
+373d6a9	178.26	discard	max_depth=9
+373d6a9	179.68	discard	subsample=0.85
+373d6a9	175.87	discard	colsample_bytree=0.55
+373d6a9	175.87	discard	colsample_bytree=0.65
+373d6a9	176.14	discard	reg_lambda=1.5
+373d6a9	184.90	discard	reg_alpha=0.02
+373d6a9	183.19	discard	grow_policy lossguide max_leaves=63
+373d6a9	182.60	discard	colsample_bylevel=0.8
+373d6a9	360.39	discard	HistGradientBoostingRegressor
