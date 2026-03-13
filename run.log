@@ -1,0 +1,5 @@
+---
+val_rmse:         210.43
+training_seconds: 4.0
+num_samples:      50000
+num_features:     7
