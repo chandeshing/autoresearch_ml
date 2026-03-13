@@ -20,7 +20,7 @@ def plot():
     kept = kept.sort_values("val_rmse", ascending=False).reset_index(drop=True)
     kept["exp"] = range(1, len(kept) + 1)
 
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(13, 6))
     ax.set_facecolor("#f8f9fa")
     fig.patch.set_facecolor("white")
 
@@ -31,15 +31,24 @@ def plot():
     best_row = kept.loc[kept["val_rmse"].idxmin()]
     ax.scatter([best_row["exp"]], [best_row["val_rmse"]], marker="*",
                color="#f39c12", s=350, zorder=5, edgecolors="#e67e22", linewidths=1)
-    ax.annotate(f"  best: £{best_row['val_rmse']:.2f}",
-                xy=(best_row["exp"], best_row["val_rmse"]),
-                xytext=(10, -15), textcoords="offset points",
-                fontsize=10, color="#e67e22", fontweight="bold")
 
-    for _, row in kept.iterrows():
-        ax.annotate(row["description"], xy=(row["exp"], row["val_rmse"]),
-                    xytext=(0, 12), textcoords="offset points",
-                    fontsize=8, color="#27ae60", ha="center", rotation=25)
+    # Alternate labels above/below to avoid overlap
+    offsets = [40, -40, 60, -60, 80, -80]
+    for i, (_, row) in enumerate(kept.iterrows()):
+        dy = offsets[i % len(offsets)]
+        va = "bottom" if dy > 0 else "top"
+        ax.annotate(
+            row["description"],
+            xy=(row["exp"], row["val_rmse"]),
+            xytext=(0, dy), textcoords="offset points",
+            fontsize=8, color="#27ae60", ha="center", va=va,
+            arrowprops=dict(arrowstyle="-", color="#27ae60", alpha=0.4, lw=0.8),
+        )
+
+    ax.annotate(f"best: £{best_row['val_rmse']:.2f}",
+                xy=(best_row["exp"], best_row["val_rmse"]),
+                xytext=(12, -20), textcoords="offset points",
+                fontsize=10, color="#e67e22", fontweight="bold")
 
     ax.set_xticks(kept["exp"])
     ax.set_xticklabels([f"#{i}" for i in kept["exp"]])
