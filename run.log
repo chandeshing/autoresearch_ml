@@ -1,6 +1,6 @@
 ---
-val_rmse:         88.23
-training_seconds: 428.9
+val_rmse:         86.75
+training_seconds: 528.0
 num_samples:      50000
 num_features:     6
 progress.png updated

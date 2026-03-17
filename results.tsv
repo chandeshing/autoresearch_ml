@@ -71,3 +71,6 @@ c0b1386	103.11	keep	ensemble 3 seeds n_estimators=20000
 a5c3575	92.15	keep	ensemble 3 seeds n_estimators=35000
 58ea072	90.02	keep	ensemble 3 seeds n_estimators=40000
 58ea072	90.02	keep	ensemble 3 seeds n_estimators=40000
+35b59fed96004e2827ae60587b50232521a60aa6	88.23	keep	ensemble 3 seeds n_estimators=45000
+35b59fe	88.23	keep	ensemble 3 seeds n_estimators=45000
+6d5d6dc65baa819d2de615ff0227a15fcbc054ff	88.23	keep	ensemble 3 seeds n_estimators=45000
