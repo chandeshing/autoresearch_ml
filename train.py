@@ -37,7 +37,7 @@ y_val = val_df[TARGET]
 # ---------------------------------------------------------------------------
 
 params = dict(
-    n_estimators=60000,
+    n_estimators=70000,
     learning_rate=0.007,
     max_depth=8,
     subsample=0.75,
