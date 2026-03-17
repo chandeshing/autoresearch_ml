@@ -51,3 +51,23 @@ bb1f0db	192.82	discard	subsample=0.7
 373d6a9	183.19	discard	grow_policy lossguide max_leaves=63
 373d6a9	182.60	discard	colsample_bylevel=0.8
 373d6a9	360.39	discard	HistGradientBoostingRegressor
+373d6a9	181.76	discard	colsample_bynode=0.7
+373d6a9	180.49	discard	max_bin=512
+5a39020	172.64	keep	subsample=0.75
+5a39020	176.17	discard	subsample=0.7
+5a39020	269.28	discard	early stopping n_estimators=8000 10pct train split
+5a39020	177.74	discard	n_estimators=5000 lr=0.004
+5a39020	213.38	discard	log_mileage feature
+72aec78	171.84	keep	ensemble 3 seeds (42 123 7) avg predictions
+72aec78	171.98	discard	ensemble 5 seeds
+72aec78	172.85	discard	ensemble 3 diverse subsample configs
+82ab695	156.03	keep	ensemble 3 seeds n_estimators=4000
+a5f988c	146.21	keep	ensemble 3 seeds n_estimators=5000
+cdc96c7	133.76	keep	ensemble 3 seeds n_estimators=7000
+4d83bdd	122.10	keep	ensemble 3 seeds n_estimators=10000
+4226c9a	110.29	keep	ensemble 3 seeds n_estimators=15000
+c0b1386	103.11	keep	ensemble 3 seeds n_estimators=20000
+92fcfb5	94.79	keep	ensemble 3 seeds n_estimators=30000
+a5c3575	92.15	keep	ensemble 3 seeds n_estimators=35000
+58ea072	90.02	keep	ensemble 3 seeds n_estimators=40000
+58ea072	90.02	keep	ensemble 3 seeds n_estimators=40000
