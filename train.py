@@ -36,7 +36,7 @@ y_val = val_df[TARGET]
 # Model (modify this)
 # ---------------------------------------------------------------------------
 
-model = xgb.XGBRegressor(
+params = dict(
     n_estimators=3000,
     learning_rate=0.007,
     max_depth=8,
@@ -44,17 +44,20 @@ model = xgb.XGBRegressor(
     colsample_bytree=0.6,
     min_child_weight=2,
     enable_categorical=True,
-    random_state=42,
     n_jobs=-1,
 )
 
-model.fit(X_train, y_train)
+preds = []
+for seed in [42, 123, 7]:
+    m = xgb.XGBRegressor(**params, random_state=seed)
+    m.fit(X_train, y_train)
+    preds.append(np.expm1(m.predict(X_val)))
 
 # ---------------------------------------------------------------------------
 # Evaluation
 # ---------------------------------------------------------------------------
 
-y_pred = np.expm1(model.predict(X_val))
+y_pred = np.mean(preds, axis=0)
 val_rmse = evaluate_model(y_val, y_pred)
 
 t_end = time.time()
